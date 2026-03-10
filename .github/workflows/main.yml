@@ -87,7 +87,7 @@ jobs:
         cp "ClashX Meta.zip" "sparkle-repo/ClashX Meta $GITHUB_REF_NAME.zip"
         
         brew install sparkle
-        echo '${{ secrets.ED_KEY }}' | $(brew --prefix)/Caskroom/sparkle/2.*/bin/generate_appcast sparkle-repo --maximum-deltas 2 --auto-prune-update-files --ed-key-file -
+        echo '${{ secrets.ED_KEY }}' | $(brew --prefix)/Caskroom/sparkle/2.*/bin/generate_appcast sparkle-repo --maximum-versions 1 --maximum-deltas 2 --auto-prune-update-files --ed-key-file -
         
         cd sparkle-repo
         rm -rf old_updates
